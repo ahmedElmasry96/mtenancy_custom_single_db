@@ -16,7 +16,7 @@ class ArticleController extends Controller
      */
     public function index(): View|Factory|Application
     {
-        $articles = Article::teamArticles()->get();
+        $articles = Article::all();
         return view('articles.index', get_defined_vars());
     }
 

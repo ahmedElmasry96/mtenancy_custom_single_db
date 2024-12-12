@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $users = User::userTeam()->get();
+        $users = User::all();
         return view('dashboard', get_defined_vars());
     }
 }
