@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $users = User::where('id', '!=', auth()->user()->id)->whereTenantId(auth()->user()->tenant_id)->get();
+        $users = User::userTeam()->get();
         return view('dashboard', get_defined_vars());
     }
 }

@@ -3,6 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{auth()->user()->tenant->name}}
         </h2>
+        <a href="{{route('articles.create')}}" class="btn btn-primary">New Article</a>
     </x-slot>
 
     <div class="py-12">
@@ -12,16 +13,16 @@
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Body</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($users as $index=>$user)
+                    @foreach($articles as $index=>$article)
                         <tr>
                             <th>{{$index + 1}}</th>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
+                            <td>{{$article->title}}</td>
+                            <td>{{$article->body}}</td>
                         </tr
                     @endforeach
                     </tbody>
